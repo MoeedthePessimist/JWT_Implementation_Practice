@@ -1,4 +1,5 @@
 const {jwtConfig} = require('../config/jwtConfig')
+const jwt = require('jsonwebtoken');
 
 
 exports.generateToken = async (payload) => {
