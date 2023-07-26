@@ -1,14 +1,14 @@
 const {
-    JWT_EXPIRES_IN,
-    JWT_SECRET
+    AUTH_EXPIRES_IN,
+    AUTH_SECRET
 } = require('../constants')
 
-exports.jwtConfig = (payload) => {
+exports.jwtConfig = (payload, secret = AUTH_SECRET, expiresIn = AUTH_EXPIRES_IN) => {
     return { 
         payload,
-        secret: JWT_SECRET,
+        secret: secret,
         expiry: {
-            expiresIn: JWT_EXPIRES_IN
+            expiresIn: expiresIn
         }
     }
 }
